@@ -43,11 +43,9 @@ class _BottomNavBar extends StatelessWidget {
       () => Container(
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
-                topRight: Radius.circular(spacing16),
-                topLeft: Radius.circular(spacing16)),
+                topRight: Radius.circular(spacing16), topLeft: Radius.circular(spacing16)),
             boxShadow: [
-              BoxShadow(
-                  color: Colors.black12, spreadRadius: 0, blurRadius: 0.2),
+              BoxShadow(color: Colors.black12, spreadRadius: 0, blurRadius: 0.2),
             ],
           ),
           child: ClipRRect(
@@ -65,6 +63,7 @@ class _BottomNavBar extends StatelessWidget {
               showSelectedLabels: false,
               showUnselectedLabels: false,
               type: BottomNavigationBarType.fixed,
+              onTap: controller.onTabSelected,
             ),
           )),
     );
