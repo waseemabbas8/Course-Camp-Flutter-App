@@ -1,5 +1,4 @@
 import 'package:course_camp/presentation/core/utils/screen_util.dart';
-import 'package:course_camp/presentation/core/values/colors.dart';
 import 'package:course_camp/presentation/core/values/dimens.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -142,23 +141,19 @@ class _CourseView extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 48,
-                                ),
+                                Spacing.h48,
                               ],
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 48,
-                        ),
+                        Spacing.v48,
                       ],
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 24, right: 16, left: 16),
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+                          borderRadius: BorderRadii.all16,
                           boxShadow: <BoxShadow>[
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.2),

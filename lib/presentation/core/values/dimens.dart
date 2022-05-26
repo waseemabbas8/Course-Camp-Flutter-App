@@ -6,6 +6,7 @@ const double spacing16 = 16;
 class Spacing {
   Spacing._();
   static final h48 = SizedBox(width: 48.toWidth);
+  static final v48 = SizedBox(height: 48.toHeight);
   static final v16 = SizedBox(height: 16.toHeight);
   static final h16 = SizedBox(width: 16.toWidth);
 }
