@@ -4,6 +4,6 @@ import 'package:get/get.dart';
 class UserCoursesBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => UserCoursesController());
+    Get.lazyPut(() => UserCoursesController(Get.find()));
   }
 }

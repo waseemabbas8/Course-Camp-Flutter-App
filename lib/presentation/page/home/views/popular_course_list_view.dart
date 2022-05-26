@@ -16,7 +16,7 @@ class PopularCourseListView extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8),
       child: Obx(
         () => GridView(
-          padding: const EdgeInsets.all(8),
+          padding: Paddings.all8,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           children: List<Widget>.generate(

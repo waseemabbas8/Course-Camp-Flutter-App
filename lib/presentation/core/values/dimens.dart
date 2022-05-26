@@ -14,7 +14,10 @@ class Spacing {
 class Paddings {
   Paddings._();
   static final all4 = EdgeInsets.all(4.toWidth);
+  static final all8 = EdgeInsets.all(8.toWidth);
+  static final all24 = EdgeInsets.all(24.toWidth);
   static final v16 = EdgeInsets.symmetric(vertical: 16.toHeight);
+  static final v20 = EdgeInsets.symmetric(vertical: 20.toHeight);
   static final h16 = EdgeInsets.symmetric(horizontal: 16.toWidth);
   static final h20 = EdgeInsets.symmetric(horizontal: 20.toWidth);
   static final v8 = EdgeInsets.symmetric(vertical: 8.toHeight);

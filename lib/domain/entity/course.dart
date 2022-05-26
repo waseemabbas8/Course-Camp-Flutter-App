@@ -17,6 +17,8 @@ class Course {
   @JsonKey(name: 'image_path')
   final String imagePath;
 
+  bool isMyList = false;
+
   Course({
     required this.id,
     required this.categoryId,

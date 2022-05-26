@@ -12,9 +12,9 @@ class HomeBindings extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => CategoryLocalDataSource());
-    Get.lazyPut(() => CourseLocalDataSource());
-    Get.lazyPut<CategoryRepository>(() => CategoryRepositoryImpl(Get.find()));
-    Get.lazyPut<CourseRepository>(() => CourseRepositoryImpl(Get.find()));
+    Get.lazyPut(() => CourseLocalDataSource(), fenix: true);
+    Get.lazyPut<CategoryRepository>(() => CategoryRepositoryImpl(Get.find()), fenix: true);
+    Get.lazyPut<CourseRepository>(() => CourseRepositoryImpl(Get.find()), fenix: true);
     Get.lazyPut(() => HomeController(Get.find(), Get.find()));
   }
 }

@@ -1,46 +1,43 @@
 import 'package:course_camp/domain/entity/course.dart';
 import 'package:course_camp/presentation/core/utils/screen_util.dart';
 import 'package:course_camp/presentation/core/values/dimens.dart';
-import 'package:course_camp/presentation/page/home/home_controller.dart';
+import 'package:course_camp/presentation/page/course/user_courses_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CourseHorizontalListView extends StatelessWidget {
-  const CourseHorizontalListView({Key? key}) : super(key: key);
+class MyCoursesListView extends StatelessWidget {
+  const MyCoursesListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final HomeController controller = Get.find();
     return Padding(
-      padding: Paddings.v16,
-      child: SizedBox(
-        height: 134.toHeight,
-        width: double.infinity,
-        child: Obx(
-          () => ListView.builder(
-            padding: Paddings.h16,
-            itemCount: controller.coursesByCategory.length,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) {
-              final int count = controller.coursesByCategory.length > 10
-                  ? 10
-                  : controller.coursesByCategory.length;
-              final Animation<double> animation = Tween<double>(begin: 0.0, end: 1.0).animate(
-                  CurvedAnimation(
-                      parent: controller.animController,
-                      curve: Interval((1 / count) * index, 1.0, curve: Curves.fastOutSlowIn)));
-              controller.animController.forward();
+      padding: Paddings.h20,
+      child: Obx(_listBuilder),
+    );
+  }
 
-              return _CourseView(
-                category: controller.coursesByCategory[index],
-                animation: animation,
-                animationController: controller.animController,
-                controller: controller,
-              );
-            },
-          ),
-        ),
-      ),
+  Widget _listBuilder() {
+    UserCoursesController controller = Get.find();
+    return ListView.separated(
+      padding: Paddings.v16,
+      itemCount: controller.courses.length,
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      itemBuilder: (BuildContext context, int index) {
+        final int count = controller.courses.length > 10 ? 10 : controller.courses.length;
+        final Animation<double> animation = Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+                parent: controller.animController,
+                curve: Interval((1 / count) * index, 1.0, curve: Curves.fastOutSlowIn)));
+        controller.animController.forward();
+
+        return _CourseView(
+          category: controller.courses[index],
+          animation: animation,
+          animationController: controller.animController,
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) => Spacing.v16,
     );
   }
 }
@@ -51,10 +48,10 @@ class _CourseView extends StatelessWidget {
     required this.category,
     required this.animationController,
     this.animation,
-    required this.controller,
+    this.callback,
   }) : super(key: key);
 
-  final HomeController controller;
+  final VoidCallback? callback;
   final Course category;
   final AnimationController animationController;
   final Animation<double>? animation;
@@ -70,14 +67,14 @@ class _CourseView extends StatelessWidget {
             transform: Matrix4.translationValues(100 * (1.0 - animation!.value), 0.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
-              onTap: () {},
+              onTap: callback,
               child: SizedBox(
-                width: 280.toWidth,
+                width: Get.width,
+                height: 125.toHeight,
                 child: Stack(
                   children: <Widget>[
                     Row(
                       children: <Widget>[
-                        Spacing.h48,
                         Expanded(
                           child: Container(
                             decoration: const BoxDecoration(
@@ -86,9 +83,7 @@ class _CourseView extends StatelessWidget {
                             ),
                             child: Row(
                               children: <Widget>[
-                                const SizedBox(
-                                  width: 48 + 24.0,
-                                ),
+                                Spacing.h16,
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,63 +134,39 @@ class _CourseView extends StatelessWidget {
                                       ),
                                       Padding(
                                         padding: Paddings.b16r16,
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              '\$${category.money}',
-                                              textAlign: TextAlign.left,
-                                              style: const TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 18,
-                                                letterSpacing: 0.27,
-                                                color: Colors.blue,
-                                              ),
-                                            ),
-                                            category.isMyList
-                                                ? Container()
-                                                : InkWell(
-                                                    onTap: () {
-                                                      category.isMyList = true;
-                                                      controller.addCourseToMyList(category.id);
-                                                    },
-                                                    child: Container(
-                                                      decoration: const BoxDecoration(
-                                                        color: Colors.blue,
-                                                        borderRadius: BorderRadii.all8,
-                                                      ),
-                                                      child: Padding(
-                                                        padding: Paddings.all4,
-                                                        child: const Icon(
-                                                          Icons.add,
-                                                          color: Colors.white,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                          ],
+                                        child: Text(
+                                          '\$${category.money}',
+                                          textAlign: TextAlign.left,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 18,
+                                            letterSpacing: 0.27,
+                                            color: Colors.blue,
+                                          ),
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
+                                Spacing.h48,
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          width: 60.toWidth,
+                        ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
-                      child: Row(
-                        children: <Widget>[
-                          ClipRRect(
-                            borderRadius: BorderRadii.all16,
-                            child: AspectRatio(
-                                aspectRatio: 1.0, child: Image.asset(category.imagePath)),
-                          )
-                        ],
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: Paddings.all24,
+                        child: ClipRRect(
+                          borderRadius: BorderRadii.all16,
+                          child:
+                              AspectRatio(aspectRatio: 1.0, child: Image.asset(category.imagePath)),
+                        ),
                       ),
                     ),
                   ],

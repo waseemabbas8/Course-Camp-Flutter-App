@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 ThemeData get lightTheme {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    // scaffoldBackgroundColor: CustomColors.white,
+    scaffoldBackgroundColor: Colors.white,
     // backgroundColor: CustomColors.backgroundLightGrey,
     textTheme: _textTheme,
     primaryColor: Colors.blue,
