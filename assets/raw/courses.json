@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "category_id": 1,
+    "title": "User Interface Design Course",
+    "lesson_count": 14,
+    "money": 25.0,
+    "rating": 4.0,
+    "image_path":"assets/images/img_interface1.png"
+  },
+  {
+    "id": 2,
+    "category_id": 1,
+    "title": "Web Design Course",
+    "lesson_count": 27,
+    "money": 30.0,
+    "rating": 4.5,
+    "image_path":"assets/images/img_interface3.png"
+  },
+  {
+    "id": 3,
+    "category_id": 2,
+    "title": "Android App Development",
+    "lesson_count": 8,
+    "money": 80.0,
+    "rating": 4.0,
+    "image_path":"assets/images/img_interface1.png"
+  },
+  {
+    "id": 4,
+    "category_id": 4,
+    "title": "Software Managing",
+    "lesson_count": 5,
+    "money": 20.0,
+    "rating": 3.0,
+    "image_path":"assets/images/img_interface3.png"
+  },
+  {
+    "id": 5,
+    "category_id": 2,
+    "title": "Node.Js Development",
+    "lesson_count": 45,
+    "money": 75.0,
+    "rating": 4.5,
+    "image_path":"assets/images/img_interface3.png"
+  },
+  {
+    "id": 6,
+    "category_id": 2,
+    "title": ".Net Core Development",
+    "lesson_count": 32,
+    "money": 100.0,
+    "rating": 4.8,
+    "image_path":"assets/images/img_interface4.png"
+  },
+  {
+    "id": 7,
+    "category_id": 5,
+    "title": "Gitar",
+    "lesson_count": 5,
+    "money": 250.0,
+    "rating": 4.2,
+    "image_path":"assets/images/img_interface1.png"
+  },
+  {
+    "id": 8,
+    "category_id": 6,
+    "title": "SMM Crash Course",
+    "lesson_count": 28,
+    "money": 50.0,
+    "rating": 4.6,
+    "image_path":"assets/images/img_interface3.png"
+  },
+  {
+    "id": 9,
+    "category_id": 6,
+    "title": "Youtube Marketing",
+    "lesson_count": 15,
+    "money": 50.0,
+    "rating": 4.5,
+    "image_path":"assets/images/img_interface4.png"
+  }
+]
