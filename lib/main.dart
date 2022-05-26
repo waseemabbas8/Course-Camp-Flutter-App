@@ -3,11 +3,15 @@ import 'package:course_camp/presentation/core/theme/light_theme.dart';
 import 'package:course_camp/presentation/core/utils/screen_util.dart';
 import 'package:course_camp/presentation/page/main/main_bindings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'presentation/core/route/app_pages.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent, // transparent status bar
+  ));
   _initDependencies();
   runApp(const MyApp());
 }
