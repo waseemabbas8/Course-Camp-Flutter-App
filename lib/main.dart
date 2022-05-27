@@ -1,12 +1,12 @@
 import 'package:course_camp/presentation/core/route/app_routes.dart';
 import 'package:course_camp/presentation/core/theme/light_theme.dart';
 import 'package:course_camp/presentation/core/utils/screen_util.dart';
-import 'package:course_camp/presentation/page/main/main_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'presentation/core/route/app_pages.dart';
+import 'presentation/page/onboarding/onboarding_bindings.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: lightTheme,
       initialRoute: Routes.onboarding,
-      initialBinding: MainBindings(),
+      initialBinding: OnboardingBindings(),
       getPages: AppPages.pages,
       debugShowCheckedModeBanner: false,
     );

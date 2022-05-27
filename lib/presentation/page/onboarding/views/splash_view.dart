@@ -24,7 +24,7 @@ class SplashView extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 200),
+            SizedBox(height: 200.toHeight),
             SizedBox(
               width: Get.width,
               child: Image.asset(

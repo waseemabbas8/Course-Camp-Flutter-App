@@ -1,4 +1,6 @@
 import 'package:animations/animations.dart';
+import 'package:course_camp/presentation/core/utils/screen_util.dart';
+import 'package:course_camp/presentation/core/values/dimens.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -64,8 +66,8 @@ class CenterNextButton extends StatelessWidget {
               builder: (context, child) => Padding(
                 padding: EdgeInsets.only(bottom: 38 - (38 * _signUpMoveAnimation.value)),
                 child: Container(
-                  height: 58,
-                  width: 58 + (200 * _signUpMoveAnimation.value),
+                  height: 58.toHeight,
+                  width: 58.toHeight + (200 * _signUpMoveAnimation.value),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8 + 32 * (1 - _signUpMoveAnimation.value)),
                     color: const Color(0xff132137),
@@ -91,7 +93,7 @@ class CenterNextButton extends StatelessWidget {
                             key: const ValueKey('Sign Up button'),
                             onTap: controller.onSignupClick,
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                              padding: Paddings.h16,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
