@@ -1,3 +1,4 @@
+import 'package:course_camp/presentation/core/utils/screen_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,9 +10,8 @@ class TopBackSkipView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final OnboardingController controller = Get.find();
-    final _animation =
-        Tween<Offset>(begin: const Offset(0, -1), end: const Offset(0.0, 0.0))
-            .animate(CurvedAnimation(
+    final _animation = Tween<Offset>(begin: const Offset(0, -1), end: const Offset(0.0, 0.0))
+        .animate(CurvedAnimation(
       parent: controller.animController,
       curve: const Interval(
         0.0,
@@ -20,8 +20,8 @@ class TopBackSkipView extends StatelessWidget {
       ),
     ));
 
-    final _skipAnimation = Tween<Offset>(begin: Offset(0, 0), end: Offset(2, 0))
-        .animate(CurvedAnimation(
+    final _skipAnimation =
+        Tween<Offset>(begin: Offset(0, 0), end: Offset(2, 0)).animate(CurvedAnimation(
       parent: controller.animController,
       curve: const Interval(
         0.6,
@@ -34,8 +34,8 @@ class TopBackSkipView extends StatelessWidget {
       position: _animation,
       child: Padding(
         padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-        child: Container(
-          height: 58,
+        child: SizedBox(
+          height: 58.toHeight,
           child: Padding(
             padding: const EdgeInsets.only(left: 8, right: 16),
             child: Row(

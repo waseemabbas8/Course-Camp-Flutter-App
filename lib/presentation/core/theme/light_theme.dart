@@ -21,7 +21,9 @@ ThemeData get lightTheme {
 //     );
 
 TextTheme get _textTheme {
-  const baseTextStyle = TextStyle();
+  const baseTextStyle = TextStyle(
+    color: CustomColors.darkerText,
+  );
   return TextTheme(
     headline1: baseTextStyle.copyWith(
       fontSize: 30.toFont,

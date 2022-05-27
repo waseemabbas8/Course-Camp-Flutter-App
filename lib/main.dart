@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: lightTheme,
-      initialRoute: Routes.main,
+      initialRoute: Routes.onboarding,
       initialBinding: MainBindings(),
       getPages: AppPages.pages,
       debugShowCheckedModeBanner: false,

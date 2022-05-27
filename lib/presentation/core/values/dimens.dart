@@ -22,6 +22,7 @@ class Paddings {
   static final v20 = EdgeInsets.symmetric(vertical: 20.toHeight);
   static final h16 = EdgeInsets.symmetric(horizontal: 16.toWidth);
   static final h20 = EdgeInsets.symmetric(horizontal: 20.toWidth);
+  static final h60 = EdgeInsets.symmetric(horizontal: 60.toWidth);
   static final v8 = EdgeInsets.symmetric(vertical: 8.toHeight);
   static final v12h18 = EdgeInsets.symmetric(vertical: 12.toHeight, horizontal: 18.toWidth);
   static final v16h20 = EdgeInsets.symmetric(vertical: 16.toHeight, horizontal: 20.toWidth);
