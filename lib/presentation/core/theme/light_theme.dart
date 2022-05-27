@@ -27,6 +27,11 @@ TextTheme get _textTheme {
       fontSize: 30.toFont,
       fontWeight: FontWeight.bold,
     ),
+    headline2: baseTextStyle.copyWith(
+      fontSize: 25.toFont,
+      fontWeight: FontWeight.bold,
+      color: CustomColors.darkerText,
+    ),
     headline3: baseTextStyle.copyWith(
       fontSize: 22.toFont,
       fontWeight: FontWeight.bold,

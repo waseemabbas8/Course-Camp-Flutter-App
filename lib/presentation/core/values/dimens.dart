@@ -9,6 +9,8 @@ class Spacing {
   static final v48 = SizedBox(height: 48.toHeight);
   static final v16 = SizedBox(height: 16.toHeight);
   static final h16 = SizedBox(width: 16.toWidth);
+  static final v8 = SizedBox(height: 8.toHeight);
+  static final v4 = SizedBox(height: 4.toHeight);
 }
 
 class Paddings {
@@ -22,6 +24,7 @@ class Paddings {
   static final h20 = EdgeInsets.symmetric(horizontal: 20.toWidth);
   static final v8 = EdgeInsets.symmetric(vertical: 8.toHeight);
   static final v12h18 = EdgeInsets.symmetric(vertical: 12.toHeight, horizontal: 18.toWidth);
+  static final v16h20 = EdgeInsets.symmetric(vertical: 16.toHeight, horizontal: 20.toWidth);
   static final b16r16 = EdgeInsets.only(bottom: 16.toHeight, right: 16.toWidth);
 }
 

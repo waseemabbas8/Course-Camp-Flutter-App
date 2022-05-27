@@ -53,7 +53,7 @@ class UserCoursesPage extends BasePage<UserCoursesController> {
                 Text(
                   'My Courses',
                   textAlign: TextAlign.left,
-                  style: Get.textTheme.headline3,
+                  style: Get.textTheme.headline2,
                 ),
               ],
             ),

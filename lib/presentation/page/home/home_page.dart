@@ -54,7 +54,7 @@ class HomePage extends BasePage<HomeController> {
                 Text(
                   'Design Course',
                   textAlign: TextAlign.left,
-                  style: Get.textTheme.headline3,
+                  style: Get.textTheme.headline2,
                 ),
               ],
             ),
