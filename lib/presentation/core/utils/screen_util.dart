@@ -25,6 +25,22 @@ class ScreenUtil {
     return _instance!;
   }
 
+  static Future<void> ensureScreenSize([
+    FlutterWindow? window,
+    Duration duration = const Duration(milliseconds: 10),
+  ]) async {
+    final binding = WidgetsFlutterBinding.ensureInitialized();
+    window ??= binding.window;
+
+    if (window.viewConfiguration.geometry.isEmpty) {
+      return Future.delayed(duration, () async {
+        binding.deferFirstFrame();
+        await ensureScreenSize(window, duration);
+        return binding.allowFirstFrame();
+      });
+    }
+  }
+
   static void init(
       {num width = defaultWidth, num height = defaultHeight, bool allowFontScaling = false}) {
     _instance ??= ScreenUtil._();

@@ -8,16 +8,14 @@ import 'package:get/get.dart';
 import 'presentation/core/route/app_pages.dart';
 import 'presentation/page/onboarding/onboarding_bindings.dart';
 
-void main() {
+void main() async {
+  await ScreenUtil.ensureScreenSize();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent, // transparent status bar
+    statusBarColor: Colors.transparent,
+    statusBarBrightness: Brightness.light,
+    statusBarIconBrightness: Brightness.dark, // transparent status bar
   ));
-  _initDependencies();
   runApp(const MyApp());
-}
-
-void _initDependencies() {
-  ScreenUtil.init(allowFontScaling: true);
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +24,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(allowFontScaling: true);
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: lightTheme,
