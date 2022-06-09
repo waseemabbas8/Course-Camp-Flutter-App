@@ -1,10 +1,9 @@
 import 'package:course_camp/presentation/core/utils/screen_util.dart';
 import 'package:flutter/material.dart';
 
-const double spacing16 = 16;
-
 class Spacing {
   Spacing._();
+
   static final h48 = SizedBox(width: 48.toWidth);
   static final v48 = SizedBox(height: 48.toHeight);
   static final v16 = SizedBox(height: 16.toHeight);
@@ -15,6 +14,7 @@ class Spacing {
 
 class Paddings {
   Paddings._();
+
   static final all4 = EdgeInsets.all(4.toWidth);
   static final all8 = EdgeInsets.all(8.toWidth);
   static final all24 = EdgeInsets.all(24.toWidth);
@@ -31,8 +31,13 @@ class Paddings {
 
 class BorderRadii {
   BorderRadii._();
+
   static const all24 = BorderRadius.all(Radius.circular(24));
   static const all16 = BorderRadius.all(Radius.circular(16));
   static const all13 = BorderRadius.all(Radius.circular(13));
   static const all8 = BorderRadius.all(Radius.circular(8));
+  static const tl16tr16 = BorderRadius.only(
+    topRight: Radius.circular(16),
+    topLeft: Radius.circular(16),
+  );
 }

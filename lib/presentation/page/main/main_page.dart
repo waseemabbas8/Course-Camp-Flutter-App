@@ -42,17 +42,13 @@ class _BottomNavBar extends StatelessWidget {
     return Obx(
       () => Container(
           decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(spacing16), topLeft: Radius.circular(spacing16)),
+            borderRadius: BorderRadii.tl16tr16,
             boxShadow: [
               BoxShadow(color: Colors.black12, spreadRadius: 0, blurRadius: 0.2),
             ],
           ),
           child: ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(spacing16),
-              topRight: Radius.circular(spacing16),
-            ),
+            borderRadius: BorderRadii.tl16tr16,
             child: BottomNavigationBar(
               items: _tabItems,
               backgroundColor: CustomColors.lightBlueGrey,
